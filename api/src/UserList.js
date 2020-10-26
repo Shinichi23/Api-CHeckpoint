@@ -18,34 +18,26 @@ const UserList = () => {
     return (
         <div>
             {listOfUser.map((item)=> (
-            <Table striped bordered hover>
+            <Table key={item.id} striped bordered hover variant="dark">
             
   <thead>
     <tr>
-      <th>#</th>
       <th>First Name</th>
       <th>Last Name</th>
-      <th>Street</th>
+      <th>City</th>
+      <th>Email</th>
+      <th>Website</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
       <td>{item.name}</td>
       <td>{item.username}</td>
-      <td>{item.address.street}</td>
+      <td>{item.address.city}</td>
+      <td>{item.email}</td>
+      <td><a href={item.website} target="_blank">{item.website}</a></td>
     </tr>
-    <tr>
-      <td>2</td>
-      <td>{item.name}</td>
-      <td>{item.username}</td>
-      <td>{item.address.street}</td>
-    </tr>
-    <tr>
-      <td>{item.name}</td>
-      <td>{item.username}</td>
-      <td>{item.address.street}</td>
-    </tr>
+    
   </tbody>
 
 </Table>
